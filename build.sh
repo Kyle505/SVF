@@ -113,7 +113,7 @@ function build_z3_from_source {
     mkdir z3-build
     cd z3-build
     # /* is a dirty hack to get z3-version...
-    cmake -DCMAKE_INSTALL_PREFIX="$SVFHOME/$Z3Home" -DZ3_BUILD_LIBZ3_SHARED=false ../z3-source/*
+    cmake -LLVM_REQUIRES_RTTI=1 -DCMAKE_INSTALL_PREFIX="$SVFHOME/$Z3Home" -DZ3_BUILD_LIBZ3_SHARED=false ../z3-source/*
     make -j${jobs}
     make install
 
